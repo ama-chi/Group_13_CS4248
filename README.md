@@ -3,7 +3,6 @@
 Welcome to the Group_13_CS4248 repository! This project is a collaborative effort by a team of five dedicated individuals working on a machine comprehension model. Machine reading comprehension model takes in a Question and an associated Passage, and outputs a segment in the passage (A word, sentence or paragraph) containing the answer to the question.
 Our goal is to explore different ways we can build a lighter weight Machine Reading Comprehension model, by decreasing training time, training data required or model size while enhancing accuracy.
 
-
 ## Overview
 
 In this repository, we employ a popular approach in Natural Language Processing (NLP) by leveraging frozen pre-trained models, such as BERT, ALBERT, and DistilBERT. We enhance these models by adding a final layer to fine-tune and optimize their performance for the specific task of machine comprehension. The final layer helps our models better understand the context and generate more accurate answers to questions posed to them.
