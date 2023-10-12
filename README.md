@@ -1,6 +1,8 @@
 # Group_13_CS4248 Machine Comprehension Model
 
-Welcome to the Group_13_CS4248 repository! This project is a collaborative effort by a team of five dedicated individuals working on a machine comprehension model. Our goal is to create a model that can effectively answer questions based on a given text.
+Welcome to the Group_13_CS4248 repository! This project is a collaborative effort by a team of five dedicated individuals working on a machine comprehension model. Machine reading comprehension model takes in a Question and an associated Passage, and outputs a segment in the passage (A word, sentence or paragraph) containing the answer to the question.
+Our goal is to explore different ways we can build a lighter weight Machine Reading Comprehension model, by decreasing training time, training data required or model size while enhancing accuracy.
+
 
 ## Overview
 
