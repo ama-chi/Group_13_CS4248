@@ -10,7 +10,8 @@ In this repository, we employ a popular approach in Natural Language Processing 
 
 - [Setup](#setup)
 - [Usage](#usage)
-- [Project Structure] (#projectstructure)
+
+
 ## Setup
 
 To get started with our machine comprehension model, follow these steps:
