@@ -1,5 +1,6 @@
 import numpy as np
 import collections
+import re
 from tqdm.auto import tqdm
 
 import evaluate
@@ -140,3 +141,6 @@ def compute_metrics(CONFIG, start_logits, end_logits, features, examples):
 
     theoretical_answers = [{"id": ex["id"], "answers": ex["answers"]} for ex in examples]
     return evaluate.load("squad").compute(predictions=predicted_answers, references=theoretical_answers)
+
+def classify_qn(question):
+    set_of_classes = {"date", "during", "how are", "how big/size", "how m/m", "how old", "undefined", "what", "what time", "when", "where", "who", "whom", "why"}
