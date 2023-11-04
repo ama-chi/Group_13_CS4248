@@ -11,12 +11,6 @@ def parse_args():
             raise argparse.ArgumentTypeError(f"The path {value} does not exist")
         return value
     
-    def check_squad_dev_path(value):
-        check_valid_path(value)
-        if os.path.basename(value) != 'dev-v1.1.json':
-            raise argparse.ArgumentTypeError("File basename must be 'dev-v1.1.json'")
-        return value
-    
     def check_json_extension(value):
         check_valid_path(os.path.dirname(value))
         base, ext = os.path.splitext(os.path.basename(value))
@@ -30,8 +24,8 @@ def parse_args():
     # Add arguments to the parser
     parser.add_argument(
         "--dev_json_path",
-        type=check_squad_dev_path,
-        default="../scripts/evaluation/dev-v1.1.json",
+        type=check_json_extension,
+        required=True,
         help="Path to the evaluation dataset JSON file. Default is '../scripts/evaluation/dev-v1.1.json'."
     )
     parser.add_argument(
