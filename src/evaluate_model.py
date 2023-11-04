@@ -32,8 +32,8 @@ prediction_path = "../scripts/evaluation/pred.json"
 
 device = 0 if torch.cuda.is_available() else -1
 
-# question_answerer = pipeline(task="question-answering", device=device, model="./local_model")
-question_answerer = pipeline(task="question-answering", device=device)
+question_answerer = pipeline(task="question-answering", device=device, model="./local_model")
+# question_answerer = pipeline(task="question-answering", device=device)
 
 print("Loading evaluation set from {}...".format(file_path))
 question_id, question_context_pair = load_evaluation_set(file_path)
