@@ -1,6 +1,7 @@
 import os
 import argparse
 import json
+from collections import OrderedDict
 
 import torch
 from transformers import pipeline
@@ -33,16 +34,10 @@ def parse_args():
         type=int,
         default=128,
         help="Batch size for processing. Default is 64."
-    )
-    parser.add_argument(
-        "--output_path",
-        type=check_json_extension,
-        required=True,
-        help="Path where predictions should be saved."
-    )
+    ) 
     parser.add_argument(
         "--model_path",
-        type=check_valid_path,
+        type=str,
         required=True,
         help="Path to the local model directory."
     )
@@ -52,9 +47,8 @@ def parse_args():
 
     return args
 
-def load_evaluation_set(dev_json_path):
-    question_id = []
-    question_context_pair = []
+def load_test_dict(dev_json_path) -> OrderedDict:
+    test_dict = OrderedDict()
 
     with open(dev_json_path) as f:
         dataset = json.load(f)['data']
@@ -62,18 +56,16 @@ def load_evaluation_set(dev_json_path):
         for article in dataset:
             for p in article['paragraphs']:
                 for qa in p['qas']:
-                    question_id.append(qa['id'])
-                    question_context_pair.append({"question": qa['question'], "context": p["context"]})
-    return question_id, question_context_pair
+                    test_dict[qa['id']] = {"question": qa['question'], "context": p["context"]}
+    
+    return test_dict 
 
-def save_pred_json(question_id, predictions, pred_json_path):
-    pred_json = {}
-
-    for qid, pred in zip(question_id, predictions):
-        pred_json[qid] = pred['answer']
+def save_pred_json(test_dict, predictions, pred_json_path):
+    for qid, pred in zip(test_dict.keys(), predictions):
+        test_dict[qid].update(pred)
 
     with open(pred_json_path, 'w') as f:
-        json.dump(pred_json, f)
+        json.dump(test_dict, f)
 
 
 def evaluate(args):
@@ -82,13 +74,14 @@ def evaluate(args):
     question_answerer = pipeline(task="question-answering", device=device, model=args.model_path)
 
     print("Loading evaluation set from {}...".format(args.dev_json_path))
-    question_id, question_context_pair = load_evaluation_set(args.dev_json_path)
+    test_dict = load_test_dict(args.dev_json_path)
 
     print("Evaluating with batch size {}...".format(args.batch_size))
-    predictions = question_answerer(question_context_pair, batch_size=args.batch_size)
+    predictions = question_answerer(test_dict.values(), batch_size=args.batch_size)
 
-    print("Done evaluating. Saving predictions to {}...".format(args.output_path))
-    save_pred_json(question_id, predictions, args.output_path)
+    output_path = f"{os.path.basename(args.model_path)}_preds.json"
+    print("Done evaluating. Saving predictions to {}...".format(output_path))
+    save_pred_json(test_dict, predictions, output_path)
 
 if __name__ == "__main__":
     args = parse_args()
