@@ -76,8 +76,10 @@ def save_pred_json(test_dict, predictions, pred_json_path):
 def evaluate(args):
     device = 0 if torch.cuda.is_available() else -1
 
+    # For registered models on HuggingFace
     question_answerer = pipeline(task="question-answering", device=device, model=args.model_path)
     
+    # For custom model
     # from transformers import AutoTokenizer, AutoModelForQuestionAnswering
     # from custom_models.bert import BertCustomConfig, BertCustomDense
 
