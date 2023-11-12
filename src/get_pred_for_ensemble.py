@@ -77,6 +77,15 @@ def evaluate(args):
     device = 0 if torch.cuda.is_available() else -1
 
     question_answerer = pipeline(task="question-answering", device=device, model=args.model_path)
+    
+    # from transformers import AutoTokenizer, AutoModelForQuestionAnswering
+    # from custom_models.bert import BertCustomConfig, BertCustomDense
+
+    # AutoModelForQuestionAnswering.register(BertCustomConfig, BertCustomDense)
+    # tokenizer = AutoTokenizer.from_pretrained(args.model_path)
+    # model = BertCustomDense.from_pretrained(args.model_path)
+    # question_answerer = pipeline(task="question-answering", device=device, model=model, tokenizer=tokenizer)
+
 
     print("Loading evaluation set from {}...".format(args.dev_json_path))
     test_dict = load_test_dict(args.dev_json_path)
