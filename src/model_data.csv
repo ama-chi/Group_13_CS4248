@@ -1,0 +1,10 @@
+name   what	 where	who	undefined	how m/m	during	when	date	how old   why	how big/size	what time	how are
+distilbert-base-cased-distilled-squad   86.08	84.99	90.21	83.77	89.93	85.22	92.73	93.96	96.37	78.67	81.43	87.33	75.35
+distilbert-base-uncased-distilled-squad	86.09	83.77	89.66	75.02	90.04	77.91	93.07	92.84	95.42	75.4	76.67	88.33	72.51
+quangb1910128/bert-finetuned-squad  87.86	86.37	90.85	80.22	91.56	87.98	94.75	95.63	93.99	78.01	75	93.33	77.63
+diffuserconfuser/squad-distilbert-base-uncased  83.52	80.81	87.24	72.75	88.09	86.99	91.7	90.73	89.07	70.7	76.67	80.56	71.3
+diffuserconfuser/squad-xlm-roberta-base   86.9	86.52	91.24	78.99	90.27	88.32	93.09	96.5	90.66	72.31	74.72	89.72	80.96 
+diffuserconfuser/squad-roberta-base  84.94	79.09	91.92	67.7	90.4	87.21	94.08	90	76.19	56.08	58.33	100	65.71
+diffuserconfuser/squad-bert-base-uncased  78.91	73.92	86.53	61.76	84.57	81.98	90.14	91.67	66.67	53.38	75	90	57.14
+diffuserconfuser/squad-xlnet-base-cased  75.53	71.12	82.97	56.53	81.32	72.67	87.46	83.33	76.19	52.03	58.33	90	48.57
+diffuserconfuser/squad-albert-base-v2  81.96	78.66	87.23	61.76	85.73	82.56	91.97	86.67	71.43	56.76	75	90	60
