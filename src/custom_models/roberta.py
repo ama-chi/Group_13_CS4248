@@ -19,7 +19,7 @@ class RobertaCustomConfig(RobertaConfig):
     model_type = "robertacustom"
 
 # This entire class is adapted from 
-# https://github.com/huggingface/transformers/blob/21dc5859421cf0d7d82d374b10f533611745a8c5/src/transformers/models/distilbert/modeling_distilbert.py#L847C65-L848C1
+# https://github.com/huggingface/transformers/blob/21dc5859421cf0d7d82d374b10f533611745a8c5/src/transformers/models/roberta/modeling_roberta.py#L1464
 
 class RobertaCustomDense(RobertaPreTrainedModel):
     config_class = RobertaCustomConfig

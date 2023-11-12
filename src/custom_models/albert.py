@@ -19,7 +19,7 @@ class AlbertCustomConfig(AlbertConfig):
     model_type = "albertcustom"
 
 # This entire class is adapted from 
-# https://github.com/huggingface/transformers/blob/21dc5859421cf0d7d82d374b10f533611745a8c5/src/transformers/models/distilbert/modeling_distilbert.py#L847C65-L848C1
+# https://github.com/huggingface/transformers/blob/21dc5859421cf0d7d82d374b10f533611745a8c5/src/transformers/models/albert/modeling_albert.py#L1209
 
 class AlbertCustomDense(AlbertPreTrainedModel):
     def __init__(self, config: AlbertConfig):

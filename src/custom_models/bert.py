@@ -20,7 +20,7 @@ class BertCustomConfig(BertConfig):
     model_type = "bertcustom"
 
 # This entire class is adapted from 
-# https://github.com/huggingface/transformers/blob/21dc5859421cf0d7d82d374b10f533611745a8c5/src/transformers/models/distilbert/modeling_distilbert.py#L847C65-L848C1
+# https://github.com/huggingface/transformers/blob/21dc5859421cf0d7d82d374b10f533611745a8c5/src/transformers/models/bert/modeling_bert.py#L1808
 
 
 class BertCustomDense(PreTrainedModel):
