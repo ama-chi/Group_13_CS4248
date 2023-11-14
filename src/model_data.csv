@@ -1,0 +1,12 @@
+name   what	 where	who	undefined	how m/m	during	when	date	how old   why	how big/size	what time	how are
+distilbert-base-cased-distilled-squad 86.08	84.99	90.21	83.77	89.93	85.22	92.73	93.96	96.37	78.67	81.43	87.33	75.35
+distilbert-base-uncased-distilled-squad 86.09	83.77	89.66	75.02	90.04	77.91	93.07	92.84	95.42	75.4	76.67	88.33	72.51
+quangb1910128/bert-finetuned-squad 87.86	86.37	90.85	80.22	91.56	87.98	94.75	95.63	93.99	78.01	75	93.33	77.63
+diffuserconfuser/squad-distilbert-base-uncased  83.52	80.81	87.24	72.75	88.09	86.99	91.7	90.73	89.07	70.7	76.67	80.56	71.3
+diffuserconfuser/squad-xlm-roberta-base   86.9	86.52	91.24	78.99	90.27	88.32	93.09	96.5	90.66	72.31	74.72	89.72	80.96 
+diffuserconfuser/squad-roberta-base  91.45	88.11	95.13	84.31	95.06	93.05	96.64	95.02	95.42	81.47	76.19	100	89.41
+diffuserconfuser/squad-bert-base-uncased  86.77	84.87	90.35	77.98	90.21	90.38	93.6	95.42	85.9	73.04	81.25	93.33	79.69
+diffuserconfuser/squad-xlnet-base-cased  84.3	81.27	86.94	73.03	87.85	81.05	90.65	89.89	91.61	73.62	74.52	97.5	75.2
+diffuserconfuser/squad-albert-base-v2  89.65	89.65	91.58	82.35	91.33	88.83	95.06	94.35	90.66	81.73	79.17	97.5	79.19
+amaachii/frozen-roberta-custom  91.25	90.44	94.4	83.25	93.99	91.08	95.4	95.7	90.66	81.71	88.1	95	85.32
+amaachii/frozen-bert-custom  85.83	83.75	89.09	79.38	89.4	88.57	94.43	95.28	90.66	78.19	78.33	85.56	75.84
