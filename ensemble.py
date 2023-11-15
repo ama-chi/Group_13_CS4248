@@ -1,7 +1,5 @@
 # TODO
 from datasets import load_dataset
-# from transformers import AutoModelForQuestionAnswering, AutoTokenizer
-# from transformers import pipeline
 import csv
 import random
 import argparse
@@ -10,6 +8,9 @@ import os
 from datasets import load_metric
 
 def parse_arguments():
+    """
+    Usage: python ensemble.py -input_csv model_data.csv (-p) -output_path results.json
+    """
     def check_json_extension(value):
         base, ext = os.path.splitext(os.path.basename(value))
         if ext.lower() != '.json':
