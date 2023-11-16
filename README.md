@@ -31,13 +31,9 @@ The final layer helps our models better understand the context and generate more
 
 
 ## Important files
-If you only want to run the final model, you only need the 2 files below.
+If you only want to run the final model, you only need the file below.
 
-Our model is split into 2 parts: 
-1. predictions.py 
-- Loads our models and collects the predictions of squad into a json file
-
-2. ensemble.py 
+ensemble.py 
 - Takes in a csv file, loads the prediction json files and chooses the most appropriate model for each question based on our proprietary algorithm. 
 
 ## Usage
@@ -59,11 +55,7 @@ To get started with our machine comprehension model, follow these steps:
    pip install -r requirements.txt
    ```
 
-3. **Download Pre-trained Models:**
-
-   Download the pre-trained BERT, ALBERT, and DistilBERT models you intend to use. You can find these models on the Hugging Face Transformers library or other sources. Make sure to update the model paths in your code accordingly.
-
-4. **Run the Model:**
+3. **Run the Model:**
    Run our model by executing both python models.
    
    ```
