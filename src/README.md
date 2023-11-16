@@ -10,9 +10,9 @@ This folder contains all the code we used for models, training, processing, fine
 - Used for evaluation of each model on every type of question class.
 
 ### finetune.py
-- 
+- Used for finetuning all layers of a selected pretrained architecture from HuggingFace.
 
 ### model.py
-- Base architecture for our custom models, actual architecture used is in folder [./custom_models].
+- Base architecture for our transfer learning models, actual architecture used is in folder [./custom_models].
 
 
