@@ -24,7 +24,6 @@ The final layer helps our models better understand the context and generate more
 
 ## Repository Structure
 - **/data:** Contains the squad v1.0 dataset.
-- **/docs:** Documentation and team profiles .
 - **/preds_for_ensemble:** Includes the predictions of individual models.
 - **/scripts:** Contains utilitiy scripts for evaluation. 
 - **/src:** Artifacts of code used to build our ensemble method.
