@@ -67,7 +67,6 @@ To get started with our machine comprehension model, follow these steps:
    Run our model by executing both python models.
    
    ```
-   python predictions.py output.json
    python ensemble.py -input_csv model_data.csv (-p) -output_path results.json
    ```
 
