@@ -38,7 +38,7 @@ Our model is split into 2 parts:
 - Loads our models and collects the predictions of squad into a json file
 
 2. ensemble.py 
-- Takes in a json file and chooses the most appropriate model for each question based on our proprietary algorithm. 
+- Takes in a csv file, loads the prediction json files and chooses the most appropriate model for each question based on our proprietary algorithm. 
 
 ## Usage
 
@@ -68,8 +68,10 @@ To get started with our machine comprehension model, follow these steps:
    
    ```
    python predictions.py output.json
-   python ensemble.py output.json results.csv
+   python ensemble.py -input_csv model_data.csv (-p) -output_path results.json
    ```
+
+   To view our thought process throughout the project, you can view our `ensemble.ipynb` notebook :-D
 
 Final predictions will be stored in results.csv.
 

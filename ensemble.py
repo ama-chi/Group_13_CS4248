@@ -1,4 +1,3 @@
-# TODO
 from datasets import load_dataset
 import csv
 import random
@@ -10,6 +9,7 @@ from datasets import load_metric
 def parse_arguments():
     """
     Usage: python ensemble.py -input_csv model_data.csv (-p) -output_path results.json
+    -p flag determines if you want to use a probabilistic approach
     """
     def check_json_extension(value):
         base, ext = os.path.splitext(os.path.basename(value))
@@ -76,14 +76,14 @@ def ensemble(input_csv, is_probabilisitc, output_json):
     with open('preds_for_ensemble/finetune/squad-xlnet-base-cased_preds.json', 'r') as f:
         squad_xlnet_base_cased_data_dict = json.load(f)
 
-    with open('preds_for_ensemble/pretrained/distilbert-base-cased-distilled-squad_preds.json', 'r') as f:
-        pretrained_distilbert_base_cased = json.load(f)
+    # with open('preds_for_ensemble/pretrained/distilbert-base-cased-distilled-squad_preds.json', 'r') as f:
+    #     pretrained_distilbert_base_cased = json.load(f)
 
-    with open('preds_for_ensemble/pretrained/distilbert-base-uncased-distilled-squad_preds.json', 'r') as f:
-        pretrained_distilbert_base_uncased = json.load(f)
+    # with open('preds_for_ensemble/pretrained/distilbert-base-uncased-distilled-squad_preds.json', 'r') as f:
+    #     pretrained_distilbert_base_uncased = json.load(f)
 
-    with open('preds_for_ensemble/pretrained/quangb1910128_bert-finetuned-squad_preds.json', 'r') as f:
-        pretrained_quang_bert = json.load(f)
+    # with open('preds_for_ensemble/pretrained/quangb1910128_bert-finetuned-squad_preds.json', 'r') as f:
+    #     pretrained_quang_bert = json.load(f)
 
     with open('preds_for_ensemble/finetune_custom/frozen-bert-custom_preds.json', 'r') as f:
         custom_frozen_bert = json.load(f)
@@ -96,10 +96,7 @@ def ensemble(input_csv, is_probabilisitc, output_json):
 
     # compile a list of all the predictions from every model
     # NOTE: the order of the models should be same as that of the csv file / google sheets
-    list_of_data_dict = [pretrained_distilbert_base_cased, 
-                        pretrained_distilbert_base_uncased, 
-                        pretrained_quang_bert, 
-                        squad_distilbert_base_uncased_data_dict, 
+    list_of_data_dict = [squad_distilbert_base_uncased_data_dict, 
                         squad_xlm_roberta_base_data_dict, 
                         squad_roberta_base_data_dict, 
                         squad_bert_base_uncased_data_dict, 
