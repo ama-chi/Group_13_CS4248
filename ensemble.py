@@ -10,6 +10,7 @@ from datasets import load_metric
 def parse_arguments():
     """
     Usage: python ensemble.py -input_csv model_data.csv (-p) -output_path results.json
+    -p flag determines if you want to use a probabilistic approach
     """
     def check_json_extension(value):
         base, ext = os.path.splitext(os.path.basename(value))
